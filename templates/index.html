@@ -2,17 +2,17 @@
 <html lang="en"></html>
 <head>
     <meta charset="utf-8">
-    <title>{{name}}'s watchlist</title>
+    <title>{{user.name}}'s watchlist</title>
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
 </head>
 <body>
     <h2>
         <img alt="avatar", src="{{url_for('static',filename='start.png')}}">
-        {{name}}'s watchlist
+        {{user.name}}'s watchlist
 
     </h2>
-    <p>{{name|length}} titles</p>
+    <p>{{user.name|length}} titles</p>
     <ul>
         {% for movie in movies %}
         <li>{{ movie.title }} - {{ movie.year }}</li>
